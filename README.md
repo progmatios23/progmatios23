@@ -1,82 +1,76 @@
 ```text
-  ____  ____   ___   ____ __  __    _  _____ ___ ___  ____ ____  _____ 
- |  _ \|  _ \ / _ \ / ___|  \/  |  / \|_   _|_ _/ _ \/ ___|___ \|___ / 
- | |_) | |_) | | | | |  _| |\/| | / _ \ | |  | | | | \___ \ __) | |_ \ 
- |  __/|  _ <| |_| | |_| | |  | |/ ___ \| |  | | |_| |___) / __/ ___) |
- |_|   |_| \_\___/ \____|_|  |_/_/   \_\_| |___\___/|____/_____|____/ 
+                                                 [RING-0]
+                                                 .---.
+                                                 |CPU|--> [PML4]
+                                                 '---'      |
+                                                            v
+   ____  ____   ___   ____ __  __    _  _____ ___   [PHYS_ADDR]
+  |  _ \|  _ \ / _ \ / ___|  \/  |  / \|_   _|_ _|      |
+  | |_) | |_) | | | | |  _| |\/| | / _ \ | |  | |       v
+  |  __/|  _ <| |_| | |_| | |  | |/ ___ \| |  | |   [PAGE_FAULT: 0]
+  |_|   |_| \_\___/ \____|_|  |_/_/   \_\_| |___|   [CR3: LOADED]
 
  .-----------------------------------------------------------------------------.
- | (x) (-) (+)                 ~/kernel_space.sys                              |
+ | (x) (-) (+)                     ~/kernel_space.sys                          |
  |-----------------------------------------------------------------------------|
  |                                                                             |
- |  Kernel, Systems & Low-Level Software Engineer from Brazil.                 |
+ | Systems & Low-Level Software Engineer from Brazil.                          |
  |                                                                             |
- |  Specializing in Windows Kernel Drivers (WDM / KMDF), x64 Virtual Memory,   |
- |  PTE Manipulation, Hypervisor Interfaces, Process Internals, Reverse        |
- |  Engineering, and High-Throughput Native Systems in C, C++ and Rust.        |
+ | Focus: Windows Kernel Drivers (WDM / KMDF), x64 Virtual Memory,             |
+ | PTE Manipulation, Hypervisor Interfaces, Process Internals, Reverse         |
+ | Engineering, and High-Throughput Native Systems in C, C++ and Rust.         |
  |                                                                             |
- |  "Ring 0 over Ring 3. Native performance over abstractions."                |
- |  - @progmatios23                                                            |
+ | "Ring 0 over Ring 3. Native performance over abstractions."                 |
+ | -@progmatios23                                                              |
  |                                                                             |
  '-----------------------------------------------------------------------------'
 ```
 
-<div align="center">
+<p><img src="./imgs/headings/stack.svg" alt="01 Stack" width="180" height="44"></p>
 
-### ⚙️ Core Technical Stack
+<p>
+  <img src="./imgs/icons/lang-c.svg" alt="C" title="C" width="60" height="60"
+  ><img src="./imgs/icons/lang-cpp.svg" alt="C++" title="C++" width="60" height="60"
+  ><img src="./imgs/icons/lang-rust.svg" alt="Rust" title="Rust" width="60" height="60"
+  ><img src="./imgs/icons/lang-asm.svg" alt="ASM" title="x86_64 ASM" width="60" height="60"
+  ><img src="./imgs/icons/lang-kernel.svg" alt="Ring 0 Kernel" title="Windows Kernel" width="60" height="60"
+  ><img src="./imgs/icons/lang-re.svg" alt="Reverse Engineering" title="Reverse Engineering" width="60" height="60"
+  ><img src="./imgs/icons/lang-linux.svg" alt="Linux" title="Linux POSIX" width="60" height="60"
+  ><img src="./imgs/icons/lang-python.svg" alt="Python" title="Python Tooling" width="60" height="60">
+</p>
 
-[![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C_(programming_language))
-[![C++](https://img.shields.io/badge/C++20-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://isocpp.org/)
-[![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
-[![Assembly](https://img.shields.io/badge/x86__64%20ASM-555555?style=for-the-badge&logo=assemblyscript&logoColor=white)](https://en.wikipedia.org/wiki/X86_assembly_language)
-[![Windows Kernel](https://img.shields.io/badge/Windows%20Kernel%20(Ring0)-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://learn.microsoft.com/en-us/windows-hardware/drivers/)
-[![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-4A154B?style=for-the-badge&logo=wireshark&logoColor=white)](https://hex-rays.com/)
-[![Linux Systems](https://img.shields.io/badge/Linux%20POSIX-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.kernel.org/)
-[![Python](https://img.shields.io/badge/Python%20Tooling-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+<p><img src="./imgs/headings/projects.svg" alt="02 Repositories" width="240" height="44"></p>
 
-</div>
-
----
-
-### 🔬 Domains of Expertise
-
-* **Kernel & Driver Development:**
-  * Windows Kernel Drivers (`WDM` / `KMDF`), Driver Signature Enforcement (DSE) bypasses via `kdmapper`.
-  * x64 Virtual Memory architecture: Page Table Entry (PTE) manipulation, CR3 directory base traversal, direct physical memory mapping (`\Device\PhysicalMemory`).
-  * Synthetic call stack spoofing to evade kernel stack-walking heuristics.
-  * PatchGuard / Kernel Patch Protection (KPP) navigation and DKOM (Direct Kernel Object Manipulation).
-* **Reverse Engineering & Binary Analysis:**
-  * Disassembly and decompilation (IDA Pro, x64dbg, Ghidra), PE/ELF/Mach-O headers, dynamic unpacking.
-  * User-mode and Kernel-mode hooking (IAT, EAT, Inline Detours, Hardware Breakpoints, Page Guarding).
-* **High-Performance Systems & Native Daemons:**
-  * Systems software in modern **Rust** and **C++**, `no_std` environments, zero-allocation data structures.
-  * TLS Fingerprint emulation (BoringSSL, JA3/JA4, HTTP/2 multiplexing).
-
----
-
-### 🚀 Highlighted Repositories
-
-| Repository | Focus & Domain | Language | Key Technologies |
+| Repository | Domain | Language | Architecture & Features |
 | :--- | :--- | :--- | :--- |
-| **[NEWKM](https://github.com/progmatios23/NEWKM)** | Windows Kernel Driver | `C++` / `C` | `WDM`, `PTE Hooks`, `Call Spoofing`, `kdmapper`, `CR3 Traversal` |
-| **[street-decrepytor](https://github.com/progmatios23/street-decrepytor)** | Reverse Engineering Suite | `Rust` / `Python` | `Native Debugger`, `Memory Dumper`, `Unicorn Engine`, `Disassembly` |
-| **[lfi-traversal-lab](https://github.com/progmatios23/lfi-traversal-lab)** | Systems Security Research | `Python` | `Path Traversal`, `Null-Byte Truncation`, `Canonicalization Defense` |
-| **[oh-my-pi-rs](https://github.com/progmatios23/oh-my-pi-rs)** | Native Systems Rework | `Rust` | `Single Static Binary`, `Zero-Node Runtime`, `Low CPU/RAM` |
-| **[Street-decryter](https://github.com/progmatios23/Street-decryter)** | Disassembler & Debugger | `C++` | `IDA-style Listing`, `x64dbg Engine`, `PE/ELF/Mach-O`, `MCP Server` |
+| **[NEWKM](https://github.com/progmatios23/NEWKM)** | Windows Kernel Driver | `C++` / `C` | WDM, manual mapping via kdmapper, PTE manipulation, CR3 traversal, synthetic call stack spoofing |
+| **[street-decrepytor](https://github.com/progmatios23/street-decrepytor)** | Reverse Engineering Suite | `Rust` / `Python` | Native Rust debugger engine, process memory dumper, Unicorn engine emulation, binary disassembly |
+| **[lfi-traversal-lab](https://github.com/progmatios23/lfi-traversal-lab)** | Systems Security Research | `Python` | Path traversal research, null-byte truncation breakdown, WAF evasion normalization, canonicalization defense |
+| **[oh-my-pi-rs](https://github.com/progmatios23/oh-my-pi-rs)** | Native Systems Rework | `Rust` | Single static binary architecture, zero-Node runtime, minimal memory footprint |
+| **[Street-decryter](https://github.com/progmatios23/Street-decryter)** | Disassembler & Debugger | `C++` | IDA-style listing, x64dbg-style engine, PE/ELF/Mach-O parsers, built-in MCP server |
 
----
+<p><img src="./imgs/headings/kernel.svg" alt="03 Kernel / Internals" width="280" height="44"></p>
 
-<div align="center">
+* **Kernel & Driver Development**
+  * Windows Kernel Architecture (WDM / KMDF), manual mapping via vulnerable signed drivers (kdmapper).
+  * x64 Virtual Memory Translation: Page Table Entry (PTE) modifications, CR3 directory base walking, direct physical RAM access.
+  * Synthetic Call Stack Spoofing: evading kernel stack walking heuristics and anti-cheat thread inspection.
+  * Driver Signature Enforcement (DSE) bypasses and kernel object manipulation (DKOM).
 
-### 📊 GitHub Activity & Metrics
+* **Reverse Engineering & Binary Analysis**
+  * Dynamic debugging, static disassembly, and decompilation (IDA Pro, x64dbg, Ghidra).
+  * Binary formats: PE32/PE32+, ELF64, Mach-O, section headers, relocations, export/import directory parsing.
+  * Hooking methodologies: IAT/EAT patching, inline detours, hardware breakpoint routing, memory page guarding (`PAGE_GUARD`).
 
-<img src="https://github-readme-stats.vercel.app/api?username=progmatios23&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="GitHub Stats" height="150" />
-&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=progmatios23&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Top Languages" height="150" />
+* **High-Throughput Systems Software**
+  * Performance engineering in modern Rust and C++20 with zero-allocation models.
+  * Network transport, socket multiplexing, and TLS fingerprint replication (BoringSSL, JA3/JA4).
 
-</div>
+<p><img src="./imgs/headings/contact.svg" alt="04 Connect" width="200" height="44"></p>
 
----
+<p>
+  <a href="https://github.com/progmatios23"><img src="./imgs/icons/icon-git.svg" alt="GitHub: @progmatios23" title="GitHub: @progmatios23" width="60" height="60"></a>
+</p>
 
 ```text
  progmatios23@ntoskrnl ~ % exit

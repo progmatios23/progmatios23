@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="44" viewBox="0 0 180 44" shape-rendering="crispEdges">
+  <defs>
+    <style>
+      .num { font-family: 'Courier New', Courier, monospace; font-size: 15px; font-weight: 900; fill: #ffffff; }
+      .txt { font-family: 'Courier New', Courier, monospace; font-size: 15px; font-weight: 800; fill: #111111; letter-spacing: 1.5px; }
+    </style>
+  </defs>
+  <!-- Drop shadow -->
+  <rect x="3" y="3" width="177" height="41" fill="#0d1117" rx="0"/>
+  
+  <!-- Outer border -->
+  <rect x="0" y="0" width="177" height="41" fill="#111111"/>
+  
+  <!-- Inner face -->
+  <rect x="2" y="2" width="173" height="37" fill="#f6f5f0"/>
+  
+  <!-- Top/Left 3D Bevel highlight -->
+  <rect x="2" y="2" width="173" height="2" fill="#ffffff"/>
+  <rect x="2" y="2" width="2" height="37" fill="#ffffff"/>
+  
+  <!-- Bottom/Right 3D Bevel shadow -->
+  <rect x="2" y="37" width="173" height="2" fill="#b4b0a4"/>
+  <rect x="173" y="2" width="2" height="37" fill="#b4b0a4"/>
+  
+  <!-- Number tag box (dark contrast badge) -->
+  <rect x="8" y="8" width="34" height="25" fill="#111111"/>
+  <rect x="9" y="9" width="32" height="23" fill="#1b2430"/>
+  <text x="25" y="24" class="num" text-anchor="middle">01</text>
+  
+  <!-- Label text -->
+  <text x="52" y="24" class="txt">STACK</text>
+</svg>
