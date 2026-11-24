@@ -67,7 +67,7 @@
   * Network transport, socket multiplexing, and TLS fingerprint replication (BoringSSL, JA3/JA4).
 
 <p><img src="./imgs/headings/contact.svg" alt="04 Connect" width="200" height="44"></p>
-Add Me> ejog710kj discord-
+Add Me>  " ejog710kj "|usario discord -
 
 <p>
   <a href="https://github.com/progmatios23"><img src="./imgs/icons/icon-git.svg" alt="GitHub: @progmatios23" title="GitHub: @progmatios23" width="60" height="60"></a>
